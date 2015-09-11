@@ -1,9 +1,9 @@
 
 ### Install
 
-To install keybase (from this tap): `brew install keybase/keybase/keybase`.
+To install keybase (from this tap): `brew install keybase/beta/keybase`.
 
-To install keybase from source: `brew install --build-from-source keybase/keybase/keybase`.
+To install keybase from source: `brew install --build-from-source keybase/beta/keybase`.
 
 ### Updating the Formula
 
@@ -35,4 +35,4 @@ Update the root_url for the bottle section of keybase.rb and push to the repo. I
 
 Commit and push the changes. After pushing, update your tap: `brew update`.
 
-Then try testing the bottle, by `brew uninstall keybase && brew install keybase/keybase/keybase`. And you should see it using the bottle.
+Then try testing the bottle by uninstalling and re-installing.
