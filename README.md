@@ -1,9 +1,13 @@
 
-### Tap
+### Install
 
 To install the keybase tap: `brew tap keybase/keybase`
 
 To prioritize this tap over the default: `brew tap-pin keybase/keybase`
+
+To install keybase: `brew install keybase`.
+
+To install keybase from source: `brew install --build-from-source keybase`.
 
 ### Updating the Formula
 
@@ -34,3 +38,5 @@ Update the root_url for the bottle section of keybase.rb and push to the repo. I
     root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-15/"
 
 Commit and push the changes. After pushing, update your tap: `brew update`.
+
+Then try testing the bottle, by `brew uninstall keybase && brew install keybase`. And you should see it using the bottle.
