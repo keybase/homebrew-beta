@@ -10,7 +10,7 @@ class Keybase < Formula
 
   bottle do
     cellar :any
-    root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-15/keybase-1.0.0-15.yosemite.bottle.tar.gz"
+    root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-15/"
     sha256 "e247890fc94dab21552479b565bc6cf7b1b0c73c0c27c3ff34f699dde85a1962" => :yosemite
   end
 
