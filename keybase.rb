@@ -9,9 +9,10 @@ class Keybase < Formula
   version "1.0.0-16"
 
   bottle do
-    cellar :any
-    root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-15/"
-    sha256 "e247890fc94dab21552479b565bc6cf7b1b0c73c0c27c3ff34f699dde85a1962" => :yosemite
+    cellar :any_skip_relocation
+    revision 1
+    root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-16/"
+    sha256 "b93282604fc321351f08fc68f8312306064a6734103fcfe1e2c435452da15070" => :yosemite
   end
 
   depends_on "go" => :build

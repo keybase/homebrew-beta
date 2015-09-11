@@ -1,15 +1,9 @@
 
-## Keybase Homebrew Tap
-
 ### Tap
 
-To install the keybase tap:
+To install the keybase tap: `brew tap keybase/keybase`
 
-`brew tap keybase/keybase`
-
-To prioritize this tap over the default:
-
-`brew tap-pin keybase/keybase`
+To prioritize this tap over the default: `brew tap-pin keybase/keybase`
 
 ### Updating the Formula
 
@@ -22,11 +16,14 @@ This example assumes the version is `1.0.0-15`.
           shasum -a 256 v1.0.0-15.tar.gz
 
 - Update the version: `version "1.0.0-15"`
-- Commit and push the changes.
+- Comment out the bottle section. We will update it below.
+- Commit and push the changes. After pushing, update your tap: `brew update`.
 
 ### Bottling
 
+    brew uninstall keybase    
     brew install --build-bottle keybase
+    brew postinstall keybase/keybase/keybase
     brew bottle keybase
 
 In the `keybase/client-beta` repository, draft a new release. Select the correct/matching tag version from the drop down.
