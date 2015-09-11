@@ -1,4 +1,8 @@
 
+## Keybase Brew
+
+This guide explains how to install beta versions of Keybase via homebrew.
+
 ### Install
 
 To install keybase (from this tap): `brew install keybase/beta/keybase`.
