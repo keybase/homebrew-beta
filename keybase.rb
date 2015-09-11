@@ -8,11 +8,11 @@ class Keybase < Formula
   head "https://github.com/keybase/client-beta.git"
   version "1.0.0-15"
 
-  # bottle do
-  #   cellar :any
-  #   root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-15"
-  #   sha256 "3c8eeac9fd3012158713f477d907ddae806c4c910da568ec971c9fb33ed055b2" => :yosemite
-  # end
+  bottle do
+    cellar :any
+    root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-15/keybase-1.0.0-15.yosemite.bottle.tar.gz"
+    sha256 "e247890fc94dab21552479b565bc6cf7b1b0c73c0c27c3ff34f699dde85a1962" => :yosemite
+  end
 
   depends_on "go" => :build
 
