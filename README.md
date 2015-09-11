@@ -16,10 +16,15 @@ To prioritize this tap over the default:
 This example assumes the version is `1.0.0-15`.
 
 - Edit the URL: `https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz`
-- Update the sha256: `shasum -a 256 v1.0.0-15.tar.gz`
-- Update the version: `version "1.0.0-15"`
+- Download the binary and calculate the sha256:
 
-Create the bottle:
+          wget https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz
+          shasum -a 256 v1.0.0-15.tar.gz
+
+- Update the version: `version "1.0.0-15"`
+- Commit and push the changes.
+
+### Bottling
 
     brew install --build-bottle keybase
     brew bottle keybase

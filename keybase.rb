@@ -2,11 +2,11 @@ class Keybase < Formula
   desc "Keybase"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz"
-  sha256 "6ceb25b308b2ae3c1b5dd663c4cd49b4e1a3abb74e585273247b1abd51f537cb"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-16.tar.gz"
+  sha256 "67d444a8e5ef5968b50e7ce39f3a68c56749e0df4c47ac4e171966abacab0313"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-15"
+  version "1.0.0-16"
 
   bottle do
     cellar :any
@@ -29,7 +29,7 @@ class Keybase < Formula
   end
 
   def post_install
-    system "#{opt_bin}/keybase", "launchd", "install", "homebrew.mxcl.keybase", "#{opt_bin}/keybase", "--run-mode=devel"
+    system "#{opt_bin}/keybase", "launchd", "install", "homebrew.mxcl.keybase", "#{opt_bin}/keybase", "--run-mode=staging"
   end
 
   test do
