@@ -5,6 +5,16 @@ To install keybase (from this tap): `brew install keybase/beta/keybase`.
 
 To install keybase from source: `brew install --build-from-source keybase/beta/keybase`.
 
+### Run Modes
+
+The brew beta currently runs in `staging` run mode. This will later be changed to run in `prod` mode.
+
+If you want to install an additional homebrew service that uses `devel` run mode, you can run:
+
+`keybase launchd install homebrew.mxcl.keybase.devel /usr/local/opt/keybase/bin/keybase --run-mode=devel`
+
+**Warning**: We don't currently prevent you from installing multiple services with the same run mode, which will cause the newly installed service to fail (since one already exists). I'll be working on this soon.
+
 ### Updating the Formula
 
 This example assumes the version is `1.0.0-15`.
