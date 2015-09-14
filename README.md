@@ -18,8 +18,9 @@ This example assumes the version is `1.0.0-15`.
           shasum -a 256 v1.0.0-15.tar.gz
 
 - Update the version: `version "1.0.0-15"`
-- Comment out the bottle section. We will update it below.
-- Commit and push the changes. After pushing, update your taps: `brew update`.
+- Comment out the bottle section. We will update it later.
+- Commit and push the changes.
+- Update your taps: `brew update`. You should see keybase in the list of updated formula.
 
 ### Bottling
 
