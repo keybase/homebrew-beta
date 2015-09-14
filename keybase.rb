@@ -2,18 +2,18 @@ class Keybase < Formula
   desc "Keybase"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-18.tar.gz"
-  sha256 "eb8d875b156f23e0e48ce990bbc4e93c3de66beefc959f71a191b05de982f98f"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-19.tar.gz"
+  sha256 "d06a334d383d1fac58e8535214706924844e63ae39f75ab0b6ea595645b1c78c"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-18"
+  version "1.0.0-19"
 
-  bottle do
-    cellar :any_skip_relocation
-    revision 1
-    root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-18/"
-    sha256 "60a2ae85806d09833eb9ac17fd6447806f41389c83145c43c9f202a398e758f7" => :yosemite
-  end
+  # bottle do
+  #   cellar :any_skip_relocation
+  #   revision 1
+  #   root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-19/"
+  #   sha256 "60a2ae85806d09833eb9ac17fd6447806f41389c83145c43c9f202a398e758f7" => :yosemite
+  # end
 
   depends_on "go" => :build
 
