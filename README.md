@@ -1,23 +1,35 @@
 
 ### Install
 
-Add keybase/beta tap: `brew tap keybase/beta`.
+Add keybase/beta tap: 
 
-To install keybase (from this tap): `brew install keybase/beta/keybase`.
+          brew tap keybase/beta
 
-To install keybase from source: `brew install --build-from-source keybase/beta/keybase`.
+To install Keybase (from this tap): 
+
+          brew install keybase/beta/keybase
+
+To (force) install Keybase from source (this is default if there is no bottle):
+
+          brew install --build-from-source keybase/beta/keybase
 
 ### Updating the Formula
 
 This example assumes the version is `1.0.0-15`.
 
-- Edit the URL: `https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz`
+- Edit the URL: 
+          
+          https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz`
+
 - Download the binary and calculate the sha256:
 
           wget https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz
           shasum -a 256 v1.0.0-15.tar.gz
 
-- Update the version: `version "1.0.0-15"`
+- Update the formula version
+
+          version "1.0.0-15"
+
 - Comment out the bottle section. We will update it later.
 - Commit and push the changes.
 - Update your taps: `brew update`. You should see keybase in the list of updated formula.
