@@ -1,31 +1,38 @@
 class KeybaseDev < Formula
-  desc "Command-line interface to Keybase.io"
+  desc "Keybase"
   homepage "https://keybase.io/"
-  url "https://github.com/keybase/node-client/archive/v0.8.18.tar.gz"
-  sha256 "c1ef27f959401164e72fbcd5c4054d13258a3f09dcdebb0ac3c447519780d59e"
-  head "https://github.com/keybase/node-client.git"
 
-  depends_on "node"
-  depends_on :gpg
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-20.tar.gz"
+  sha256 "1e63d966cd0bd10e73eec51844eee9f75a64270af1aa36c6e8a3103b1bcca49c"
+
+  head "https://github.com/keybase/client-beta.git"
+  version "1.0.0-20"
+
+  # bottle do
+  #   cellar :any_skip_relocation
+  #   root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-19/"
+  #   sha256 "c667efdd99cce2c0767816b972b15cb665bdde1791b6f8e5e813303a120951da" => :yosemite
+  # end
+
+  depends_on "go" => :build
 
   def install
-    # remove self-update command
-    # https://github.com/keybase/keybase-issues/issues/1477
-    rm "lib/command/update.js"
-    inreplace "lib/command/all.js", '"update", ', ""
-    inreplace "lib/req.js", "keybase-installer", "brew update && brew upgrade keybase"
+    ENV["GOPATH"] = buildpath
+    ENV["GOBIN"] = buildpath
+    system "mkdir", "-p", "src/github.com/keybase/"
+    system "mv", "client", "src/github.com/keybase/"
 
-    libexec.install Dir["*"]
-    (bin/"keybase").write <<-EOS.undent
-      #!/bin/sh
-      export KEYBASE_BIN="#{bin}/keybase"
-      exec "#{Formula["node"].opt_bin}/node" "#{libexec}/bin/main.js" "$@"
-    EOS
+    system "go", "get", "github.com/keybase/client/go/keybase"
+    system "go", "build", "-tags", "release", "github.com/keybase/client/go/keybase"
+
+    bin.install "keybase"
+  end
+
+  def post_install
+    system "#{opt_bin}/keybase", "launchd", "install", "homebrew.mxcl.keybase", "#{opt_bin}/keybase"
   end
 
   test do
-    # Keybase requires a valid GPG keychain to be set up. Fetch Homebrew's pubkey.
-    system "gpg", "--keyserver", "pgp.mit.edu", "--recv-keys", "0xE33A3D3CCE59E297"
-    system "#{bin}/keybase", "id", "homebrew"
+    system "#{bin}/keybase", "version", "-d"
   end
 end
