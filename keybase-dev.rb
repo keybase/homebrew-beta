@@ -1,4 +1,4 @@
-class Keybase < Formula
+class KeybaseDev < Formula
   desc "Command-line interface to Keybase.io"
   homepage "https://keybase.io/"
   url "https://github.com/keybase/node-client/archive/v0.8.18.tar.gz"
