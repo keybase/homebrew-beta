@@ -8,6 +8,10 @@ Add keybase/beta tap:
 To install Keybase (from this tap): 
 
           brew install keybase/beta/keybase
+          
+*Warning*: If you have the node version installed, because this is a custom tap, you need to use upgrade (I'm testing whether this will apply when we go live):
+
+          brew upgrade keybase/beta/keybase
 
 To (force) install Keybase from source (this is default if there is no bottle):
 
