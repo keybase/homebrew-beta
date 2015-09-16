@@ -23,6 +23,16 @@ To (force) install Keybase from source (this is the default if there is no bottl
 
           brew install --build-from-source keybase/beta/kbstage
 
+#### Environments
+
+Keybase has multiple environments (run modes) for development and testing. The following are the app directory and launchd service labels for each environment:
+
+ Env     | App Directory                                   | Launchd Label 
+ ------- | ----------------------------------------------- | ---------- 
+ Prod    | `~/Library/Application\ Support/Keybase`        | `homebrew.mxcl.keybase`  
+ Staging | `~/Library/Application\ Support/KeybaseStaging` | `homebrew.mxcl.keybase.staging`  
+ Devel   | `~/Library/Application\ Support/KeybaseDevel`   | `homebrew.mxcl.keybase.devel`
+
 ### Updating the Formula
 
 These steps can apply to all formulas in this repo.
@@ -62,16 +72,6 @@ Update the release title (you can use the version `v1.0.0-15`) and description s
 Commit and push the changes. After pushing, update your tap: `brew update`.
 
 Then try testing the bottle by uninstalling and re-installing.
-
-### Environments
-
-Keybase has different environments (run modes), and so uses different application directories and launchd labels.
-
- Env     | App Directory                                   | Launchd Label 
- ------- | ----------------------------------------------- | ---------- 
- Prod    | `~/Library/Application\ Support/Keybase`        | `homebrew.mxcl.keybase`  
- Staging | `~/Library/Application\ Support/KeybaseStaging` | `homebrew.mxcl.keybase.staging`  
- Devel   | `~/Library/Application\ Support/KeybaseDevel`   | `homebrew.mxcl.keybase.devel`
 
 
 ### Clearing Local State
