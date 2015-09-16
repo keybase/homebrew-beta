@@ -25,7 +25,8 @@ To (force) install Keybase from source (this is the default if there is no bottl
 
 ### Updating the Formula
 
-This example assumes the version is `1.0.0-15`.
+These steps can apply to all formulas in this repo.
+This example assumes the version is `1.0.0-15`. 
 
 - Edit the source archive URL:
 
