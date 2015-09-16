@@ -23,6 +23,9 @@ class Kbstage < Formula
   end
 
   def post_install
+    # Uninstall previous conflicting beta homebrew install. This is only temporary.
+    system "#{opt_bin}/kbstage", "launchd", "uninstall", "homebrew.mxcl.keybase"
+
     system "#{opt_bin}/kbstage", "launchd", "install", "homebrew.mxcl.keybase.staging", "#{opt_bin}/kbstage"
   end
 
