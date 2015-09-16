@@ -1,4 +1,4 @@
-class KeybaseDev < Formula
+class Kbdev < Formula
   desc "Keybase (Dev)"
   homepage "https://keybase.io/"
 

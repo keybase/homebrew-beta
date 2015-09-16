@@ -1,4 +1,4 @@
-class KeybaseStaging < Formula
+class Kbstage < Formula
   desc "Keybase (Staging)"
   homepage "https://keybase.io/"
 
