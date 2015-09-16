@@ -18,7 +18,7 @@
 | Devel   | `brew install keybase/beta/kbdev`   | `kbdev`    |
 
 
-To (force) install Keybase from source (this is default if there is no bottle), use `--build-from-source`. For example:
+To (force) install Keybase from source (this is the default if there is no bottle), use `--build-from-source`. For example:
 
           brew install --build-from-source keybase/beta/kbstage
 
