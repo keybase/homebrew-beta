@@ -27,7 +27,7 @@ To (force) install Keybase from source (this is the default if there is no bottl
 
 Keybase has multiple environments (run modes) for development and testing. The following are the app directory and launchd service labels for each environment under homebrew:
 
- Env     | App Directory                                   | Launchd Label 
+ Env     | App Directory                                   | Service (launchd) Label 
  ------- | ----------------------------------------------- | ---------- 
  Prod    | `~/Library/Application\ Support/Keybase`        | `homebrew.mxcl.keybase`  
  Staging | `~/Library/Application\ Support/KeybaseStaging` | `homebrew.mxcl.keybase.staging`  
