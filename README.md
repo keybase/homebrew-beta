@@ -11,12 +11,13 @@
 
 1. Install Keybase:
 
-| Env     | Command                             | Executable | Notes
-| ------- | ----------------------------------- | ---------- | -----
-| Prod    | `brew install keybase/beta/keybase` | `keybase`  | This is temporarily disabled until prod is safe.
-| Staging | `brew install keybase/beta/kbstage` | `kbstage`  |
-| Devel   | `brew install keybase/beta/kbdev`   | `kbdev`    |
+ Env     | Command                             | Executable 
+ ------- | ----------------------------------- | ---------- 
+ Prod    | `brew install keybase/beta/keybase` | `keybase`  
+ Staging | `brew install keybase/beta/kbstage` | `kbstage`  
+ Devel   | `brew install keybase/beta/kbdev`   | `kbdev`    
 
+**Note**: Production (release) build is currently disabled until it is safe to run against prod.
 
 To (force) install Keybase from source (this is the default if there is no bottle), use `--build-from-source`. For example:
 
