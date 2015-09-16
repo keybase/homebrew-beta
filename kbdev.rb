@@ -1,8 +1,8 @@
-class Keybase < Formula
-  desc "Keybase"
+class KeybaseDev < Formula
+  desc "Keybase (Dev)"
   homepage "https://keybase.io/"
 
-  BIN_NAME = "keybase"
+  BIN_NAME = "kbdev"
   VERSION = "1.0.0-21"
 
   url "https://github.com/keybase/client-beta/archive/v#{VERSION}.tar.gz"
@@ -10,12 +10,6 @@ class Keybase < Formula
 
   head "https://github.com/keybase/client-beta.git"
   version VERSION
-
-  # bottle do
-  #   cellar :any_skip_relocation
-  #   root_url "https://github.com/keybase/client-beta/releases/download/v#{VERSION}/"
-  #   sha256 "215b27eb171d15c70ce4c8b486ee5ed666a21d8d850b106c4928c05a3eafb8f4" => :yosemite
-  # end
 
   depends_on "go" => :build
 
@@ -26,13 +20,14 @@ class Keybase < Formula
     system "mv", "client", "src/github.com/keybase/"
 
     system "go", "get", "github.com/keybase/client/go/keybase"
-    system "go", "build", "-tags", "release", "-o", BIN_NAME, "github.com/keybase/client/go/keybase"
+    # No release or staging tag is a (default) devel build
+    system "go", "build", "-o", BIN_NAME, "github.com/keybase/client/go/keybase"
 
     bin.install BIN_NAME
   end
 
   def post_install
-    system "#{opt_bin}/#{BIN_NAME}", "launchd", "install", "homebrew.mxcl.keybase", "#{opt_bin}/#{BIN_NAME}"
+    system "#{opt_bin}/#{BIN_NAME}", "launchd", "install", "homebrew.mxcl.keybase.devel", "#{opt_bin}/#{BIN_NAME}"
   end
 
   test do

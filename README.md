@@ -1,7 +1,7 @@
 
 ### Install
 
-Add keybase/beta tap: 
+Add keybase/beta tap:
 
           brew tap keybase/beta
 
@@ -9,7 +9,7 @@ To update Keybase (if you have the old node client installed):
 
           brew upgrade keybase/beta/keybase
 
-To install Keybase: 
+To install Keybase:
 
           brew install keybase/beta/keybase
 
@@ -21,18 +21,14 @@ To (force) install Keybase from source (this is default if there is no bottle):
 
 This example assumes the version is `1.0.0-15`.
 
-- Edit the URL: 
-          
-          https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz`
+- Update the VERSION constant:
+
+          VERSION = "1.0.0-15"
 
 - Download the binary and calculate the sha256:
 
           wget https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz
           shasum -a 256 v1.0.0-15.tar.gz
-
-- Update the formula version
-
-          version "1.0.0-15"
 
 - Comment out the bottle section. We will update it later.
 - Commit and push the changes.
