@@ -62,3 +62,24 @@ Update the release title (you can use the version `v1.0.0-15`) and description s
 Commit and push the changes. After pushing, update your tap: `brew update`.
 
 Then try testing the bottle by uninstalling and re-installing.
+
+### Environments
+
+Keybase has different environments (run modes), and so uses different application directories and launchd labels.
+
+ Env     | App Directory                                   | Launchd Label 
+ ------- | ----------------------------------------------- | ---------- 
+ Prod    | `~/Library/Application\ Support/Keybase`        | `homebrew.mxcl.keybase`  
+ Staging | `~/Library/Application\ Support/KeybaseStaging` | `homebrew.mxcl.keybase.staging`  
+ Devel   | `~/Library/Application\ Support/KeybaseDevel`   | `homebrew.mxcl.keybase.devel`
+
+
+### Clearing Local State
+
+In the rare case you need to clear your local state, you should stop the service first before removing the application directory.
+
+For example, for staging:
+
+          kbstage launchd stop homebrew.mxcl.keybase.staging
+          rm -rf ~/Library/Application\ Support/KeybaseStaging
+          kbstage launchd start homebrew.mxcl.keybase.staging
