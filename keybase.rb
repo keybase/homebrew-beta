@@ -1,4 +1,4 @@
-class Keybase < Formula
+class KeybaseDisabled < Formula
   desc "Keybase"
   homepage "https://keybase.io/"
 
