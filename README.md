@@ -1,15 +1,15 @@
 
 ### Install
 
-1. Add keybase/beta tap (only need to do this once):
+1. Add `keybase/beta` tap (you only need to do this once):
 
           brew tap keybase/beta
           
-1. Update brew (formulas change a lot):
+1. Update Homebrew (formulas change a lot):
 
           brew update
 
-1. To install Keybase:
+1. Install Keybase:
 
 | Env     | Command                             | Executable | Notes
 | ------- | ----------------------------------- | ---------- | -----
