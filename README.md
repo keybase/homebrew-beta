@@ -1,21 +1,26 @@
 
 ### Install
 
-Add keybase/beta tap:
+1. Add keybase/beta tap (only need to do this once):
 
           brew tap keybase/beta
+          
+1. Update brew (formulas change a lot):
 
-To update Keybase (if you have the old node client installed):
+          brew update
 
-          brew upgrade keybase/beta/keybase
+1. To install Keybase:
 
-To install Keybase:
+| Env     | Command                             | Executable | Notes
+| ------- | ----------------------------------- | ---------- | -----
+| Prod    | `brew install keybase/beta/keybase` | `keybase`  | This is temporarily disabled until prod is safe.
+| Staging | `brew install keybase/beta/kbstage` | `kbstage`  |
+| Devel   | `brew install keybase/beta/kbdev`   | `kbdev`    |
 
-          brew install keybase/beta/keybase
 
-To (force) install Keybase from source (this is default if there is no bottle):
+To (force) install Keybase from source (this is default if there is no bottle), use `--build-from-source`. For example:
 
-          brew install --build-from-source keybase/beta/keybase
+          brew install --build-from-source keybase/beta/kbstage
 
 ### Updating the Formula
 
