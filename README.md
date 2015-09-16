@@ -21,14 +21,18 @@ To (force) install Keybase from source (this is default if there is no bottle):
 
 This example assumes the version is `1.0.0-15`.
 
-- Update the VERSION constant:
+- Edit the source archive URL:
 
-          VERSION = "1.0.0-15"
+          https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz
 
-- Download the binary and calculate the sha256:
+- Download the source archive and calculate the sha256:
 
           wget https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz
           shasum -a 256 v1.0.0-15.tar.gz
+
+- Update the formula version:
+
+          version "1.0.0-15"
 
 - Comment out the bottle section. We will update it later.
 - Commit and push the changes.
