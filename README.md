@@ -39,3 +39,7 @@ Please report issues to [keybase-issues](https://github.com/keybase/keybase-issu
 ### External Sites
 
 Any external tweets/gists still need to be public but should eventually be deleted. You can prefix your tweets with @keybaseio to avoid follower spam if you want.
+
+### More
+
+Details about how we handle environments, update formulas, bottle releases and more can be found in the [Guide](https://github.com/keybase/homebrew-beta/blob/master/GUIDE.md).
