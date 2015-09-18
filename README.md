@@ -26,7 +26,7 @@ This installs `kbstage` (not `keybase`), so we don't conflict with your regular 
           kbstage search max
 
 
-### Staging
+### API/Website
 
 The staging website is located at [stage0.keybase.io](https://stage0.keybase.io/).
 
