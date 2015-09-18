@@ -19,7 +19,7 @@ These instructions will allow you to install a beta version of the Keybase comma
           brew install keybase/beta/kbstage
 
 
-This installs `kbstage` (not `keybase`), so we don't conflict with your regular installation. Use `kbstage` when issueing commands. For example:
+This installs `kbstage` (not `keybase`), so we don't conflict with your regular installation. Use `kbstage` when issuing commands. For example:
 
           kbstage id gabrielh
           kbstage login
