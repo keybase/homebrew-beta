@@ -34,7 +34,9 @@ The staging website is located at [stage0.keybase.io](https://stage0.keybase.io/
 
 ### Reporting Issues
 
-Please report issues to [keybase-issues](https://github.com/keybase/keybase-issues/issues), and specify a `stage0` label.
+Any security related issues should be reported through [HackerOne/keybase](https://hackerone.com/keybase/).
+
+Other issues can be reported to [keybase-issues](https://github.com/keybase/keybase-issues/issues). Please attach a `stage0` label.
 
 ### External Sites
 
