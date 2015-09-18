@@ -1,6 +1,6 @@
 ## Keybase Beta
 
-The repository contains brew formulas for betas and testing different environments.
+The repository contains formulas for installing and testing beta builds across different environments.
 
 ### Install
 
