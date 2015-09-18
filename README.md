@@ -1,3 +1,7 @@
+## Keybase Beta
+
+The repository contains brew formulas for betas and testing different environments.
+
 ### Install
 
 These instructions will allow you to install a beta version of the Keybase command line client that hits a staging environment.
@@ -10,12 +14,12 @@ These instructions will allow you to install a beta version of the Keybase comma
 
           brew update
 
-1. Install Keybase:
+1. Install Keybase (staging):
           
           brew install keybase/beta/kbstage
 
 
-This installs `kbstage` (not `keybase`), so as not to conflict with your regular install. Use `kbstage` when issueing commands. For example:
+This installs `kbstage` (not `keybase`), so we don't conflict with your regular installation. Use `kbstage` when issueing commands. For example:
 
           kbstage id gabrielh
           kbstage login
