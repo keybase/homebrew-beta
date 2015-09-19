@@ -32,7 +32,7 @@ Note that any data you put on [stage0.keybase.io](https://stage0.keybase.io) mig
 - Anything that you can break
 - Anything that is confusing (prompts, error messages, etc)
 - Security issues
-- 
+
 The signup code stage0 can be used repeatedly. Signup as much as you want for testing. Please just don't hammer us with a script, as we are not load testing that server right now.
 
 ### Doing Proofs
