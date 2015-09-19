@@ -6,7 +6,7 @@ To prepare, Keybase is adding support for device-specific keys in the command-li
 
 ### How to Install
 
-Our Go client is almost ready. If you're a mac user with [Homebrew](http://brew.sh/) installed, you can start exploring this faster, better multi-key CLI today. Here's how you get it:
+Our Go based command line tool is almost ready. If you're a mac user with [Homebrew](http://brew.sh/) installed, you can start exploring this faster, better multi-key experience today. Here's how you get it:
 
           brew tap keybase/beta
           brew update
