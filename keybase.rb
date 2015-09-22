@@ -26,7 +26,7 @@ class KeybaseDisabled < Formula
     system "mv", "client", "src/github.com/keybase/"
 
     system "go", "get", "github.com/keybase/client/go/keybase"
-    system "go", "build", "-tags", "release", "-o", BIN_NAME, "github.com/keybase/client/go/keybase"
+    system "go", "build", "-tags", "release brew", "-o", BIN_NAME, "github.com/keybase/client/go/keybase"
 
     bin.install BIN_NAME
   end

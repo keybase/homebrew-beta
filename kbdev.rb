@@ -18,7 +18,7 @@ class Kbdev < Formula
 
     system "go", "get", "github.com/keybase/client/go/keybase"
     # No release or staging tag is a (default) devel build
-    system "go", "build", "-o", "kbdev", "github.com/keybase/client/go/keybase"
+    system "go", "build", "-tags", "brew", "-o", "kbdev", "github.com/keybase/client/go/keybase"
 
     bin.install "kbdev"
   end
