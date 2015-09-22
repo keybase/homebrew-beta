@@ -41,7 +41,7 @@ This example assumes the version is `1.0.0-15`.
 
           version "1.0.0-15"
 
-- Comment out the bottle section. We will update it later.
+- Comment out the bottle section (if present). We will update it later.
 - Commit and push the changes.
 - Update your taps: `brew update`. You should see keybase in the list of updated formula.
 

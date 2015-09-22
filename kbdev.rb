@@ -2,11 +2,11 @@ class Kbdev < Formula
   desc "Keybase (Dev)"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-21.tar.gz"
-  sha256 "e081c154ad2c270f849850337969891059b1c2a86f17761de178f75fa78750d5"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-22.tar.gz"
+  sha256 "074766f5d049acc882fc435a3623e08e188a3c7eafe0e865dc45d77d3e2dc746"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-21"
+  version "1.0.0-22"
 
   depends_on "go" => :build
 
