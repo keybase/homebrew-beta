@@ -1,6 +1,8 @@
 ### Want to Help Test?
 
-See the [Install Instructions](https://keybase.io/docs/cli_kbstage).
+This repository is the homebrew tap for beta, staging and development builds.
+
+See the [Install Instructions](https://keybase.io/docs/cli_kbstage) for more details.
 
 ### Source Code & More
 
