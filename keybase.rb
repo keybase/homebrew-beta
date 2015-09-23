@@ -3,7 +3,7 @@ class KeybaseDisabled < Formula
   homepage "https://keybase.io/"
 
   url "https://github.com/keybase/client-beta/archive/v1.0.0-24.tar.gz"
-  sha256 "37896535cee601066f8000fcb3f6301c5987ab8eefa5cab7bf3ba4ee6f8a72f2"
+  sha256 "a39aa3699e8a0c144d0eba630a03d008d5da21006e6cae7d8acd8c586a5d288b"
 
   head "https://github.com/keybase/client-beta.git"
   version "1.0.0-24"

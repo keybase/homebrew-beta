@@ -34,7 +34,7 @@ This example assumes the version is `1.0.0-15`.
 
 - Calculate the sha256:
 
-          curl -s https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz | shasum -a 256
+          curl -L -s https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz | shasum -a 256
 
 - Update the formula version:
 
