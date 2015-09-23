@@ -23,7 +23,7 @@ class Kbstage < Formula
     system "mv", "client", "src/github.com/keybase/"
 
     system "go", "get", "github.com/keybase/client/go/keybase"
-    system "go", "build", "-tags", "staging brew", "-o", "kbstage", "github.com/keybase/client/go/keybase"
+    system "go", "build", "-a", "-tags", "staging brew", "-o", "kbstage", "github.com/keybase/client/go/keybase"
 
     bin.install "kbstage"
   end

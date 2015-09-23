@@ -3,7 +3,7 @@ class Kbdev < Formula
   homepage "https://keybase.io/"
 
   url "https://github.com/keybase/client-beta/archive/v1.0.0-24.tar.gz"
-  sha256 "37896535cee601066f8000fcb3f6301c5987ab8eefa5cab7bf3ba4ee6f8a72f2"
+  sha256 "a39aa3699e8a0c144d0eba630a03d008d5da21006e6cae7d8acd8c586a5d288b"
 
   head "https://github.com/keybase/client-beta.git"
   version "1.0.0-24"
@@ -18,7 +18,7 @@ class Kbdev < Formula
 
     system "go", "get", "github.com/keybase/client/go/keybase"
     # No release or staging tag is a (default) devel build
-    system "go", "build", "-tags", "brew", "-o", "kbdev", "github.com/keybase/client/go/keybase"
+    system "go", "build", "-a", "-tags", "brew", "-o", "kbdev", "github.com/keybase/client/go/keybase"
 
     bin.install "kbdev"
   end
