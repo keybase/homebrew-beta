@@ -2,14 +2,11 @@ class KeybaseDisabled < Formula
   desc "Keybase"
   homepage "https://keybase.io/"
 
-  BIN_NAME = "keybase"
-  VERSION = "1.0.0-21"
-
-  url "https://github.com/keybase/client-beta/archive/v#{VERSION}.tar.gz"
-  sha256 "e081c154ad2c270f849850337969891059b1c2a86f17761de178f75fa78750d5"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-24.tar.gz"
+  sha256 "37896535cee601066f8000fcb3f6301c5987ab8eefa5cab7bf3ba4ee6f8a72f2"
 
   head "https://github.com/keybase/client-beta.git"
-  version VERSION
+  version "1.0.0-24"
 
   # bottle do
   #   cellar :any_skip_relocation
@@ -26,16 +23,16 @@ class KeybaseDisabled < Formula
     system "mv", "client", "src/github.com/keybase/"
 
     system "go", "get", "github.com/keybase/client/go/keybase"
-    system "go", "build", "-tags", "release brew", "-o", BIN_NAME, "github.com/keybase/client/go/keybase"
+    system "go", "build", "-tags", "release brew", "-o", "keybase", "github.com/keybase/client/go/keybase"
 
-    bin.install BIN_NAME
+    bin.install "keybase"
   end
 
   def post_install
-    system "#{opt_bin}/#{BIN_NAME}", "launchd", "install", "homebrew.mxcl.keybase", "#{opt_bin}/#{BIN_NAME}"
+    system "#{opt_bin}/keybase", "launchd", "install", "homebrew.mxcl.keybase", "#{opt_bin}/keybase"
   end
 
   test do
-    system "#{bin}/#{BIN_NAME}", "version", "-d"
+    system "#{bin}/keybase", "version"
   end
 end

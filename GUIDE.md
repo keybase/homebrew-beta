@@ -32,10 +32,9 @@ This example assumes the version is `1.0.0-15`.
 
           https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz
 
-- Download the source archive and calculate the sha256:
+- Calculate the sha256:
 
-          wget https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz
-          shasum -a 256 v1.0.0-15.tar.gz
+          curl -s https://github.com/keybase/client-beta/archive/v1.0.0-15.tar.gz | shasum -a 256
 
 - Update the formula version:
 
