@@ -1,28 +1,3 @@
-### Environments
-
- Env     | Command                             | Executable
- ------- | ----------------------------------- | ----------
- Prod    | `brew install keybase/beta/keybase` | `keybase`  
- Staging | `brew install keybase/beta/kbstage` | `kbstage`  
- Devel   | `brew install keybase/beta/kbdev`   | `kbdev`    
-
-**Note**: Production (release) build is currently disabled until we deem it safe to run against prod.
-
-To (force) install Keybase from source (this is the default if there is no bottle), use `--build-from-source`. For example:
-
-          brew install --build-from-source keybase/beta/kbstage
-
-
-Because Keybase has multiple environments (run modes) for development and testing there are different app directories and service launchd labels.
-
- Env     | App Directory                                   | Service (launchd) Label
- ------- | ----------------------------------------------- | ----------
- Prod    | `~/Library/Application\ Support/Keybase`        | `homebrew.mxcl.keybase`  
- Staging | `~/Library/Application\ Support/KeybaseStaging` | `homebrew.mxcl.keybase.staging`  
- Devel   | `~/Library/Application\ Support/KeybaseDevel`   | `homebrew.mxcl.keybase.devel`
-
-
-
 ### Updating the Formula
 
 These steps can apply to all formulas in this repo.
@@ -62,8 +37,30 @@ Commit and push the changes. After pushing, update your tap: `brew update`.
 
 Then try testing the bottle by uninstalling and re-installing.
 
+### Environments
 
-### Clearing Local State
+ Env     | Command                             | Executable
+ ------- | ----------------------------------- | ----------
+ Prod    | `brew install keybase/beta/keybase` | `keybase`  
+ Staging | `brew install keybase/beta/kbstage` | `kbstage`  
+ Devel   | `brew install keybase/beta/kbdev`   | `kbdev`    
+
+**Note**: Production (release) build is currently disabled until we deem it safe to run against prod.
+
+To (force) install Keybase from source (this is the default if there is no bottle), use `--build-from-source`. For example:
+
+          brew install --build-from-source keybase/beta/kbstage
+
+
+Because Keybase has multiple environments (run modes) for development and testing there are different app directories and service launchd labels.
+
+ Env     | App Directory                                   | Service (launchd) Label
+ ------- | ----------------------------------------------- | ----------
+ Prod    | `~/Library/Application\ Support/Keybase`        | `homebrew.mxcl.keybase`  
+ Staging | `~/Library/Application\ Support/KeybaseStaging` | `homebrew.mxcl.keybase.staging`  
+ Devel   | `~/Library/Application\ Support/KeybaseDevel`   | `homebrew.mxcl.keybase.devel`
+
+#### Clearing Local State
 
 In the rare case you need to clear your local state, you should stop the service first before removing the application directory.
 
