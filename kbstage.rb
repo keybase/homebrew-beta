@@ -10,11 +10,11 @@ class Kbstage < Formula
 
   depends_on "go" => :build
 
-  bottle do
-    cellar :any_skip_relocation
-    root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-24/"
-    sha256 "92e6fe3931d7121551881b8a8a5661b512b4f7c66f56836a3a0c3dc2f32ebb4b" => :yosemite
-  end
+  # bottle do
+  #   cellar :any_skip_relocation
+  #   root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-24/"
+  #   sha256 "92e6fe3931d7121551881b8a8a5661b512b4f7c66f56836a3a0c3dc2f32ebb4b" => :yosemite
+  # end
 
   def install
     ENV["GOPATH"] = buildpath
