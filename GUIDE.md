@@ -19,12 +19,13 @@ This example assumes the version is `1.2.3-400`.
 - Commit and push the changes.
 - Update your taps: `brew update`. You should see keybase in the list of updated formula.
 
-### Bottling
+### Bottling and Testing
 
     brew uninstall kbstage
-    brew install --build-bottle keybase/beta/kbstage
-    brew postinstall keybase/beta/kbstage
-    brew bottle keybase/beta/kbstage
+    cp kbstage.rb /usr/local/Library/Formula/
+    brew install --build-bottle kbstage
+    brew postinstall kbstage
+    brew bottle kbstage
 
 Copy the bottle into the formula. In the bottle block, update the root_url for the bottle section of keybase.rb and push to the repo. It doesn't include the `tar.gz` file name:
 

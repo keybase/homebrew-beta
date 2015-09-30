@@ -2,11 +2,11 @@ class Kbdev < Formula
   desc "Keybase (Dev)"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-25.tar.gz"
-  sha256 "47f29fbce993dcacbfa790476699d8946bded97e2053310744dfff36475f1cba"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-26.tar.gz"
+  sha256 "07290246b88af2bb34601144e6158b490e9deed8c445795ac119852089c12e57"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-25"
+  version "1.0.0-26"
 
   depends_on "go" => :build
 
@@ -15,6 +15,8 @@ class Kbdev < Formula
     ENV["GOBIN"] = buildpath
     system "mkdir", "-p", "src/github.com/keybase/"
     system "mv", "client", "src/github.com/keybase/"
+    # This is temporary
+    system "rm", "-rf", "src/github.com/keybase/go/vendor"
 
     system "go", "get", "github.com/keybase/client/go/keybase"
     # No release or staging tag is a (default) devel build
@@ -24,7 +26,7 @@ class Kbdev < Formula
   end
 
   def post_install
-    system "#{opt_bin}/kbdev", "launchd", "install", "homebrew.mxcl.keybase.devel", "#{opt_bin}/kbdev"
+    system "#{opt_bin}/kbdev", "launchd", "install", "homebrew.mxcl.keybase.devel", "#{opt_bin}/kbdev", "service"
   end
 
   test do

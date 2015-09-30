@@ -2,11 +2,11 @@ class KeybaseDisabled < Formula
   desc "Keybase"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-25.tar.gz"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-26.tar.gz"
   sha256 "47f29fbce993dcacbfa790476699d8946bded97e2053310744dfff36475f1cba"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-25"
+  version "1.0.0-26"
 
   # bottle do
   #   cellar :any_skip_relocation
@@ -21,6 +21,8 @@ class KeybaseDisabled < Formula
     ENV["GOBIN"] = buildpath
     system "mkdir", "-p", "src/github.com/keybase/"
     system "mv", "client", "src/github.com/keybase/"
+    # This is temporary
+    system "rm", "-rf", "src/github.com/keybase/go/vendor"
 
     system "go", "get", "github.com/keybase/client/go/keybase"
     system "go", "build", "-a", "-tags", "release brew", "-o", "keybase", "github.com/keybase/client/go/keybase"
@@ -29,7 +31,7 @@ class KeybaseDisabled < Formula
   end
 
   def post_install
-    system "#{opt_bin}/keybase", "launchd", "install", "homebrew.mxcl.keybase", "#{opt_bin}/keybase"
+    system "#{opt_bin}/keybase", "launchd", "install", "homebrew.mxcl.keybase", "#{opt_bin}/keybase", "service"
   end
 
   test do
