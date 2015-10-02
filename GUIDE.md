@@ -5,19 +5,22 @@ This example assumes the version is `1.2.3-400`.
 
 - Edit the source archive URL:
 
-          https://github.com/keybase/client-beta/archive/v1.2.3-400.tar.gz
+    https://github.com/keybase/client-beta/archive/v1.2.3-400.tar.gz
 
 - Calculate the sha256:
 
-          curl -L -s https://github.com/keybase/client-beta/archive/v1.2.3-400.tar.gz | shasum -a 256
+    curl -L -s https://github.com/keybase/client-beta/archive/v1.2.3-400.tar.gz | shasum -a 256
 
 - Update the formula version:
 
-          version "1.2.3-400"
+    version "1.2.3-400"
 
 - Comment out the bottle section (if present). We will update it later.
-- Commit and push the changes.
-- Update your taps: `brew update`. You should see keybase in the list of updated formula.
+
+To test the formula:
+
+    cp kbstage.rb /usr/local/Library/Formula/
+    brew install kbstage
 
 ### Bottling and Testing
 

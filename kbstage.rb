@@ -2,18 +2,18 @@ class Kbstage < Formula
   desc "Keybase (Staging)"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-26.tar.gz"
-  sha256 "07290246b88af2bb34601144e6158b490e9deed8c445795ac119852089c12e57"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-27.tar.gz"
+  sha256 "7d22d29ef576c6acdea2de7157d7c5eb89f476ff442a92a248bb66ca5bb261a5"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-26"
+  version "1.0.0-27"
 
   depends_on "go" => :build
 
   bottle do
     cellar :any_skip_relocation
-    root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-26/"
-    sha256 "1e1d1c9ffd32718e69edbbd00ebfc74017df4e3aac48029d519e4d7841194d08" => :yosemite
+    sha256 "c04b868ba22b8ce2742d3031c9b342cdaa4e5629915e9219e1fa3cb5938c2d07" => :yosemite
+    root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-27"
   end
 
   def install
@@ -29,9 +29,6 @@ class Kbstage < Formula
   end
 
   def post_install
-    # Uninstall previous conflicting beta homebrew install. This is only temporary.
-    system "#{opt_bin}/kbstage", "launchd", "uninstall", "homebrew.mxcl.keybase"
-
     system "#{opt_bin}/kbstage", "launchd", "install", "homebrew.mxcl.keybase.staging", "#{opt_bin}/kbstage", "service"
   end
 
