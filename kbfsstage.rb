@@ -12,12 +12,11 @@ class Kbfsstage < Formula
   depends_on "kbstage"
   depends_on :osxfuse
 
-  # bottle do
-  #   cellar :any_skip_relocation
-  #   revision 1
-  #   sha256 "462ba6eb9c26027a461d08b66ffe6f33084298b7c82bf0a2f314d5864ddf2a0e" => :yosemite
-  #   root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-25/"
-  # end
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "d10ab44eb7153fb6041dbc5250eb4fdfe2e4e35e7f77a18e188675d8ab92865b" => :yosemite
+    root_url "https://github.com/keybase/kbfs-beta/releases/download/v1.0.0-16/"
+  end
 
   def install
     ENV["GOPATH"] = buildpath
