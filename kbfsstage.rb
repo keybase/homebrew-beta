@@ -2,21 +2,21 @@ class Kbfsstage < Formula
   desc "Keybase FS (Staging)"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/kbfs-beta/archive/v1.0.0-16.tar.gz"
-  sha256 "9dd6ba649c361cc3585b6549637dc0bfd61ba2a548de79e4a989272a958c6697"
+  url "https://github.com/keybase/kbfs-beta/archive/v1.0.0-17.tar.gz"
+  sha256 "471dd28bf321fac3c937e1c99dda6f1abe865aca5241f64555c85921cc3042f8"
 
   head "https://github.com/keybase/kbfs-beta.git"
-  version "1.0.0-16"
+  version "1.0.0-17"
 
   depends_on "go" => :build
   depends_on "kbstage"
-  depends_on :osxfuse
+  #depends_on :osxfuse
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "d10ab44eb7153fb6041dbc5250eb4fdfe2e4e35e7f77a18e188675d8ab92865b" => :yosemite
-    root_url "https://github.com/keybase/kbfs-beta/releases/download/v1.0.0-16/"
-  end
+  # bottle do
+  #   cellar :any_skip_relocation
+  #   sha256 "d10ab44eb7153fb6041dbc5250eb4fdfe2e4e35e7f77a18e188675d8ab92865b" => :yosemite
+  #   root_url "https://github.com/keybase/kbfs-beta/releases/download/v1.0.0-16"
+  # end
 
   def install
     ENV["GOPATH"] = buildpath
