@@ -2,19 +2,19 @@ class Kbstage < Formula
   desc "Keybase (Staging)"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-27.tar.gz"
-  sha256 "7d22d29ef576c6acdea2de7157d7c5eb89f476ff442a92a248bb66ca5bb261a5"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-28.tar.gz"
+  sha256 "72c0ea53c8ff316e27586d026e4ef450f3c0be7bf574c9e6ffec2abe81211adc"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-27"
+  version "1.0.0-28"
 
   depends_on "go" => :build
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "c04b868ba22b8ce2742d3031c9b342cdaa4e5629915e9219e1fa3cb5938c2d07" => :yosemite
-    root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-27"
-  end
+  # bottle do
+  #   cellar :any_skip_relocation
+  #   sha256 "c04b868ba22b8ce2742d3031c9b342cdaa4e5629915e9219e1fa3cb5938c2d07" => :yosemite
+  #   root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-27"
+  # end
 
   def install
     ENV["GOPATH"] = buildpath
