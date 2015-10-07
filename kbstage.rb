@@ -35,4 +35,5 @@ class Kbstage < Formula
   test do
     system "#{bin}/kbstage", "version"
   end
+
 end
