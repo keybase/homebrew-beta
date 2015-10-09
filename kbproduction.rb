@@ -2,11 +2,11 @@ class Kbprod < Formula
   desc "Keybase (Production)"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-30.tar.gz"
-  sha256 "8ded13a9650d9b80f5afe5a52cab33ae94515b5317d9a72c88ca7f45e9a5e005"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-31.tar.gz"
+  sha256 "28f3e950416462e39fc9c6abc9ec01891e44a2bdb164d7062f334d5799eaed22"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-30"
+  version "1.0.0-31"
 
   depends_on "go" => :build
 
@@ -23,13 +23,13 @@ class Kbprod < Formula
     system "mkdir", "-p", "src/github.com/keybase/"
     system "mv", "client", "src/github.com/keybase/"
 
-    system "go", "build", "-a", "-tags", "release brew", "-o", "kbprod", "github.com/keybase/client/go/keybase"
+    system "go", "build", "-a", "-tags", "release brew", "github.com/keybase/client/go/keybase"
 
-    bin.install "kbprod"
+    bin.install "keybase"
   end
 
   def post_install
-    system "#{opt_bin}/kbprod", "launchd", "install", "homebrew.mxcl.keybase.production", "#{opt_bin}/kbprod", "service"
+    system "#{opt_bin}/keybase", "launchd", "install", "homebrew.mxcl.keybase.production", "#{opt_bin}/keybase", "service"
   end
 
   test do
