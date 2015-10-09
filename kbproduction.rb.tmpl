@@ -1,4 +1,4 @@
-class Kbprod < Formula
+class Kbproduction < Formula
   desc "Keybase (Production)"
   homepage "https://keybase.io/"
 
@@ -33,6 +33,6 @@ class Kbprod < Formula
   end
 
   test do
-    system "#{bin}/kbprod", "version"
+    system "#{bin}/keybase", "version"
   end
 end
