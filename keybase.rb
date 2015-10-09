@@ -1,31 +1,29 @@
-class KeybaseDisabled < Formula
+class Keybase < Formula
   desc "Keybase"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-26.tar.gz"
-  sha256 "47f29fbce993dcacbfa790476699d8946bded97e2053310744dfff36475f1cba"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-31.tar.gz"
+  sha256 "28f3e950416462e39fc9c6abc9ec01891e44a2bdb164d7062f334d5799eaed22"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-26"
+  version "1.0.0-31"
+
+  depends_on "go" => :build
 
   # bottle do
   #   cellar :any_skip_relocation
-  #   root_url "https://github.com/keybase/client-beta/releases/download/v#{VERSION}/"
-  #   sha256 "215b27eb171d15c70ce4c8b486ee5ed666a21d8d850b106c4928c05a3eafb8f4" => :yosemite
+  #   sha256 "c04b868ba22b8ce2742d3031c9b342cdaa4e5629915e9219e1fa3cb5938c2d07" => :yosemite
+  #   root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-27"
   # end
-
-  depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
     ENV["GOBIN"] = buildpath
+    ENV["GO15VENDOREXPERIMENT"] = "1"
     system "mkdir", "-p", "src/github.com/keybase/"
     system "mv", "client", "src/github.com/keybase/"
-    # This is temporary
-    system "rm", "-rf", "src/github.com/keybase/go/vendor"
 
-    system "go", "get", "github.com/keybase/client/go/keybase"
-    system "go", "build", "-a", "-tags", "release brew", "-o", "keybase", "github.com/keybase/client/go/keybase"
+    system "go", "build", "-a", "-tags", "release brew", "github.com/keybase/client/go/keybase"
 
     bin.install "keybase"
   end
