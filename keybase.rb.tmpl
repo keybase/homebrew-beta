@@ -1,12 +1,12 @@
-class Kbproduction < Formula
-  desc "Keybase (Production)"
+class Keybase < Formula
+  desc "Keybase"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-31.tar.gz"
-  sha256 "28f3e950416462e39fc9c6abc9ec01891e44a2bdb164d7062f334d5799eaed22"
+  url "https://github.com/keybase/client-beta/archive/%VERSION_TAG%.tar.gz"
+  sha256 "%SRC_SHA%"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-31"
+  version "%VERSION%"
 
   depends_on "go" => :build
 
@@ -29,7 +29,7 @@ class Kbproduction < Formula
   end
 
   def post_install
-    system "#{opt_bin}/keybase", "launchd", "install", "homebrew.mxcl.keybase.production", "#{opt_bin}/keybase", "service"
+    system "#{opt_bin}/keybase", "launchd", "install", "homebrew.mxcl.keybase", "#{opt_bin}/keybase", "service"
   end
 
   test do
