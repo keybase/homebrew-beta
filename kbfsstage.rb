@@ -21,7 +21,7 @@ class Kbfsstage < Formula
   def install
     ENV["GOPATH"] = buildpath
     ENV["GOBIN"] = buildpath
-    ENV["GO15VENDOREXPERIMENT"] = "0"                                           
+    ENV["GO15VENDOREXPERIMENT"] = "0"
     system "mkdir", "-p", "src/github.com/keybase/"
     system "mv", "client", "src/github.com/keybase/"
     system "mv", "kbfs", "src/github.com/keybase/"
