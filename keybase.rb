@@ -23,7 +23,7 @@ class Keybase < Formula
     system "mkdir", "-p", "src/github.com/keybase/"
     system "mv", "client", "src/github.com/keybase/"
 
-    system "go", "build", "-a", "-tags", "release brew", "github.com/keybase/client/go/keybase"
+    system "go", "build", "-a", "-tags", "production brew", "github.com/keybase/client/go/keybase"
 
     bin.install "keybase"
   end
