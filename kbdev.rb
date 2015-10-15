@@ -15,8 +15,6 @@ class Kbdev < Formula
     ENV["GOBIN"] = buildpath
     system "mkdir", "-p", "src/github.com/keybase/"
     system "mv", "client", "src/github.com/keybase/"
-    # This is temporary
-    system "rm", "-rf", "src/github.com/keybase/go/vendor"
 
     system "go", "get", "github.com/keybase/client/go/keybase"
     # No release or staging tag is a (default) devel build
