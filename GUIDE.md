@@ -24,11 +24,15 @@ To test the formula:
 
 ### Bottling and Testing
 
-    brew uninstall kbstage
-    cp kbstage.rb /usr/local/Library/Formula/
-    brew install --build-bottle kbstage
-    brew postinstall kbstage
-    brew bottle kbstage
+    brew uninstall --force kbstage
+    cp kbstage.rb /usr/local/Library/Taps/keybase/homebrew-beta
+    brew install --build-bottle keybase/beta/kbstage
+    brew postinstall keybase/beta/kbstage
+    brew bottle keybase/beta/kbstage
+
+Be sure to revert any changes in `/usr/local/Library/Taps/keybase/homebrew-beta`:
+
+    git checkout kbstage.rb
 
 Copy the bottle into the formula. In the bottle block, update the root_url for the bottle section of keybase.rb and push to the repo. It doesn't include the `tar.gz` file name:
 
