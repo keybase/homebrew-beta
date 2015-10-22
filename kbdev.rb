@@ -2,22 +2,28 @@ class Kbdev < Formula
   desc "Keybase (Dev)"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client-beta/archive/v1.0.0-26.tar.gz"
-  sha256 "07290246b88af2bb34601144e6158b490e9deed8c445795ac119852089c12e57"
+  url "https://github.com/keybase/client-beta/archive/v1.0.0-36.tar.gz"
+  sha256 "656c8cbfad3c346716ffa8733acae2e32cdcb3b29a67877420438983fb27b5bf"
 
   head "https://github.com/keybase/client-beta.git"
-  version "1.0.0-26"
+  version "1.0.0-36"
 
   depends_on "go" => :build
+
+  # bottle do
+  #   cellar :any_skip_relocation
+  #   sha256 "c04b868ba22b8ce2742d3031c9b342cdaa4e5629915e9219e1fa3cb5938c2d07" => :yosemite
+  #   root_url "https://github.com/keybase/client-beta/releases/download/v1.0.0-27"
+  # end
 
   def install
     ENV["GOPATH"] = buildpath
     ENV["GOBIN"] = buildpath
+    ENV["GO15VENDOREXPERIMENT"] = "1"
     system "mkdir", "-p", "src/github.com/keybase/"
     system "mv", "client", "src/github.com/keybase/"
 
-    system "go", "get", "github.com/keybase/client/go/keybase"
-    # No release or staging tag is a (default) devel build
+    # No production or staging tag is a (default) devel build
     system "go", "build", "-a", "-tags", "brew", "-o", "kbdev", "github.com/keybase/client/go/keybase"
 
     bin.install "kbdev"
