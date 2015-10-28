@@ -77,3 +77,22 @@ For example, for staging:
           kbstage launchd stop homebrew.mxcl.keybase.staging
           rm -rf ~/Library/Application\ Support/KeybaseStaging
           kbstage launchd start homebrew.mxcl.keybase.staging
+
+### Building into Brew
+
+Sometimes it's useful to build a new version of a keybase binary directly over
+the existing brew install.
+
+For example, kbstage:
+
+```
+go build -a -tags "staging brew" -o /usr/local/opt/kbstage/bin/kbstage github.com/keybase/client/go/keybase
+/usr/local/opt/kbstage/bin/kbstage launchd install homebrew.mxcl.keybase.staging /usr/local/opt/kbstage/bin/kbstage service
+```
+
+For example, kbfsstage:
+
+```
+go build -a -tags "staging brew" -o /usr/local/opt/kbfsstage/bin/kbfsstage github.com/keybase/kbfs/kbfsfuse
+/usr/local/opt/kbstage/bin/kbstage launchd install homebrew.mxcl.kbfs.staging  /usr/local/opt/kbfsstage/bin/kbfsstage $HOME/Keybase.stage
+```
