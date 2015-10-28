@@ -33,9 +33,6 @@ class Kbfsstage < Formula
   end
 
   def post_install
-    # Uninstall other service which can conflict. This is only temporary.
-    system "kbstage", "launchd", "uninstall", "keybase.KBFS.staging"
-
     mount_dir = "#{ENV['HOME']}/Keybase.stage"
     system "mkdir", "-p", mount_dir
     system "kbstage", "launchd", "install", "homebrew.mxcl.kbfs.staging", "#{opt_bin}/kbfsstage", mount_dir
