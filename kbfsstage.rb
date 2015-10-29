@@ -3,7 +3,7 @@ class Kbfsstage < Formula
   homepage "https://keybase.io/"
 
   url "https://github.com/keybase/kbfs-beta/archive/v1.0.0-21.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  sha256 "dfb720fbf56ba1b3a16701f5e5b7c25427c17d043365eb115763b380c635a04a"
 
   head "https://github.com/keybase/kbfs-beta.git"
   version "1.0.0-21"
