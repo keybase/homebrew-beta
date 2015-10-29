@@ -2,11 +2,11 @@ class Kbfsstage < Formula
   desc "Keybase FS (Staging)"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/kbfs-beta/archive/v1.0.0-21.tar.gz"
-  sha256 "dfb720fbf56ba1b3a16701f5e5b7c25427c17d043365eb115763b380c635a04a"
+  url "https://github.com/keybase/kbfs-beta/archive/v1.0.0-22.tar.gz"
+  sha256 "59e6cecb28584e12e334d7b6b9895ebc0d3736084cd8bbf2fd1b1f209641766a"
 
   head "https://github.com/keybase/kbfs-beta.git"
-  version "1.0.0-21"
+  version "1.0.0-22"
 
   depends_on "go" => :build
   depends_on "kbstage"
