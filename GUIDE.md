@@ -17,22 +17,23 @@ This example assumes the version is `1.2.3-400`.
 
 - Comment out the bottle section (if present). We will update it later.
 
+### Testing
+
 To test the formula:
 
-    cp kbstage.rb /usr/local/Library/Formula/
-    brew install kbstage
-
-### Bottling and Testing
-
-    brew uninstall --force kbstage
     cp kbstage.rb /usr/local/Library/Taps/keybase/homebrew-beta
-    brew install --build-bottle keybase/beta/kbstage
-    brew postinstall keybase/beta/kbstage
-    brew bottle keybase/beta/kbstage
+    brew install kbstage
 
 Be sure to revert any changes in `/usr/local/Library/Taps/keybase/homebrew-beta`:
 
     git checkout kbstage.rb
+
+### Bottling
+
+    brew uninstall --force kbstage
+    brew install --build-bottle keybase/beta/kbstage
+    brew postinstall keybase/beta/kbstage
+    brew bottle keybase/beta/kbstage
 
 Copy the bottle into the formula. In the bottle block, update the root_url for the bottle section of keybase.rb and push to the repo. It doesn't include the `tar.gz` file name:
 
