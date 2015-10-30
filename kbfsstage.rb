@@ -9,6 +9,9 @@ class Kbfsstage < Formula
   version "1.0.0-22"
 
   depends_on "go" => :build
+  # Needed for third-party go dependencies that use hg, in particular
+  # code.google.com/p/rsc/qr.
+  depends_on "hg" => :build
   depends_on "kbstage"
   #depends_on :osxfuse
 
