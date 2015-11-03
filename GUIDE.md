@@ -5,11 +5,11 @@ This example assumes the version is `1.2.3-400`.
 
 - Edit the source archive URL:
 
-    https://github.com/keybase/client-beta/archive/v1.2.3-400.tar.gz
+    https://github.com/keybase/client/archive/v1.2.3-400.tar.gz
 
 - Calculate the sha256:
 
-    curl -L -s https://github.com/keybase/client-beta/archive/v1.2.3-400.tar.gz | shasum -a 256
+    curl -L -s https://github.com/keybase/client/archive/v1.2.3-400.tar.gz | shasum -a 256
 
 - Update the formula version:
 
@@ -37,9 +37,9 @@ Be sure to revert any changes in `/usr/local/Library/Taps/keybase/homebrew-beta`
 
 Copy the bottle into the formula. In the bottle block, update the root_url for the bottle section of keybase.rb and push to the repo. It doesn't include the `tar.gz` file name:
 
-    root_url "https://github.com/keybase/client-beta/releases/download/v1.2.3-400/"
+    root_url "https://github.com/keybase/client/releases/download/v1.2.3-400/"
 
-In the `keybase/client-beta` repository, draft a new release. Select the correct/matching tag version from the drop down.
+In the `keybase/client` repository, draft a new release. Select the correct/matching tag version from the drop down.
 Update the release title (you can use the version `v1.2.3-400`) and description should include changes from the previous release. Then upload the `kbstage-1.2.3-400.yosemite.bottle.tar.gz` file, mark pre-release and hit Publish.
 
 Commit and push the changes. After pushing, update your tap: `brew update`.
