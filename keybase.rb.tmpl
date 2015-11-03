@@ -20,8 +20,8 @@ class Keybase < Formula
     ENV["GOPATH"] = buildpath
     ENV["GOBIN"] = buildpath
     ENV["GO15VENDOREXPERIMENT"] = "1"
-    system "mkdir", "-p", "src/github.com/keybase/"
-    system "mv", "client", "src/github.com/keybase/"
+    system "mkdir", "-p", "src/github.com/keybase/client/"
+    system "mv", "go", "src/github.com/keybase/client/"
 
     system "go", "build", "-a", "-tags", "production brew", "github.com/keybase/client/go/keybase"
 

@@ -3,7 +3,7 @@ class Keybase < Formula
   homepage "https://keybase.io/"
 
   url "https://github.com/keybase/client/archive/v1.0.0-42.tar.gz"
-  sha256 "c2bb1322ea5dc078004b1fdb53dea77bc2fc1cd29d9db4422c188772e4950b47"
+  sha256 "8ab0a9dcb2f23af097d2d09cedd58d1d0cbd55f5cd589f105711d76d0d5c2f9e"
 
   head "https://github.com/keybase/client.git"
   version "1.0.0-42"
@@ -20,8 +20,8 @@ class Keybase < Formula
     ENV["GOPATH"] = buildpath
     ENV["GOBIN"] = buildpath
     ENV["GO15VENDOREXPERIMENT"] = "1"
-    system "mkdir", "-p", "src/github.com/keybase/"
-    system "mv", "client", "src/github.com/keybase/"
+    system "mkdir", "-p", "src/github.com/keybase/client/"
+    system "mv", "go", "src/github.com/keybase/client/"
 
     system "go", "build", "-a", "-tags", "production brew", "github.com/keybase/client/go/keybase"
 

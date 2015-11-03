@@ -3,7 +3,7 @@ class Kbstage < Formula
   homepage "https://keybase.io/"
 
   url "https://github.com/keybase/client/archive/v1.0.0-41.tar.gz"
-  sha256 "7581afac1083cbf16fba30cfebb22cef6e812d1ae9a1370d02ed02232d45c49e"
+  sha256 "8ab0a9dcb2f23af097d2d09cedd58d1d0cbd55f5cd589f105711d76d0d5c2f9e"
 
   head "https://github.com/keybase/client.git"
   version "1.0.0-41"
@@ -20,8 +20,8 @@ class Kbstage < Formula
     ENV["GOPATH"] = buildpath
     ENV["GOBIN"] = buildpath
     ENV["GO15VENDOREXPERIMENT"] = "1"
-    system "mkdir", "-p", "src/github.com/keybase/"
-    system "mv", "client", "src/github.com/keybase/"
+    system "mkdir", "-p", "src/github.com/keybase/client/"
+    system "mv", "go", "src/github.com/keybase/client/"
 
     system "go", "build", "-a", "-tags", "staging brew", "-o", "kbstage", "github.com/keybase/client/go/keybase"
 
