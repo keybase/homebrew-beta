@@ -30,10 +30,10 @@ Be sure to revert any changes in `/usr/local/Library/Taps/keybase/homebrew-beta`
 
 ### Bottling
 
-    brew uninstall --force kbstage
-    brew install --build-bottle keybase/beta/kbstage
-    brew postinstall keybase/beta/kbstage
-    brew bottle keybase/beta/kbstage
+    brew uninstall --force keybase
+    brew install --build-bottle keybase/beta/keybase
+    brew postinstall keybase/beta/keybase
+    brew bottle keybase/beta/keybase
 
 Copy the bottle into the formula. In the bottle block, update the root_url for the bottle section of keybase.rb and push to the repo. It doesn't include the `tar.gz` file name:
 
