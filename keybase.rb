@@ -12,7 +12,9 @@ class Keybase < Formula
 
   bottle do
     cellar :any_skip_relocation
+    revision 1
     sha256 "1216a7d3a1b51ca31ae7e57c723b4901c0e50e0dd4ee6c2e10210e98ffead38c" => :yosemite
+    sha256 "20e0842a415633b01131eda3a387a5576e4626f7a675686fdd80f5615a0203da" => :el_capitan
     root_url "https://github.com/keybase/client/releases/download/v1.0.0-45"
   end
 
