@@ -10,11 +10,11 @@ class Keybase < Formula
 
   depends_on "go" => :build
 
-  # bottle do
-  #   cellar :any_skip_relocation
-  #   sha256 "c04b868ba22b8ce2742d3031c9b342cdaa4e5629915e9219e1fa3cb5938c2d07" => :yosemite
-  #   root_url "https://github.com/keybase/client/releases/download/v1.0.0-27"
-  # end
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "1216a7d3a1b51ca31ae7e57c723b4901c0e50e0dd4ee6c2e10210e98ffead38c" => :yosemite
+    root_url "https://github.com/keybase/client/releases/download/v1.0.0-45"
+  end
 
   def install
     ENV["GOPATH"] = buildpath

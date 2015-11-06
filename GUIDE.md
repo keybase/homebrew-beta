@@ -42,8 +42,6 @@ Copy the bottle into the formula. In the bottle block, update the root_url for t
 In the `keybase/client` repository, draft a new release. Select the correct/matching tag version from the drop down.
 Update the release title (you can use the version `v1.2.3-400`) and description should include changes from the previous release. Then upload the `kbstage-1.2.3-400.yosemite.bottle.tar.gz` file, mark pre-release and hit Publish.
 
-Commit and push the changes. After pushing, update your tap: `brew update`.
-
 Then try testing the bottle by uninstalling and re-installing.
 
 ### Environments
