@@ -2,11 +2,11 @@ class Kbstage < Formula
   desc "Keybase (Staging)"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client/archive/v1.0.0-44.tar.gz"
-  sha256 "40ffc83b9bfc8f071277c2bda3b39b727944850707c9b6c839514fa602c4210d"
+  url "https://github.com/keybase/client/archive/v1.0.0-45.tar.gz"
+  sha256 "51385ea2823affb8f4a94d462ad96052ebe4b20c05518276096236d45a3c9653"
 
   head "https://github.com/keybase/client.git"
-  version "1.0.0-44"
+  version "1.0.0-45"
 
   depends_on "go" => :build
 
