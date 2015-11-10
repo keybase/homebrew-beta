@@ -2,21 +2,19 @@ class Keybase < Formula
   desc "Keybase"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client/archive/v1.0.0-45.tar.gz"
-  sha256 "51385ea2823affb8f4a94d462ad96052ebe4b20c05518276096236d45a3c9653"
+  url "https://github.com/keybase/client/archive/v1.0.0-46.tar.gz"
+  sha256 "383625f3b3d4c2c78e68defc1d90c5e611441f5da03f3eebc0c4c1ffc6d305cd"
 
   head "https://github.com/keybase/client.git"
-  version "1.0.0-45"
+  version "1.0.0-46"
 
   depends_on "go" => :build
 
-  bottle do
-    cellar :any_skip_relocation
-    revision 1
-    sha256 "1216a7d3a1b51ca31ae7e57c723b4901c0e50e0dd4ee6c2e10210e98ffead38c" => :yosemite
-    sha256 "20e0842a415633b01131eda3a387a5576e4626f7a675686fdd80f5615a0203da" => :el_capitan
-    root_url "https://github.com/keybase/client/releases/download/v1.0.0-45"
-  end
+  # bottle do
+  #   cellar :any_skip_relocation
+  #   sha256 "c04b868ba22b8ce2742d3031c9b342cdaa4e5629915e9219e1fa3cb5938c2d07" => :yosemite
+  #   root_url "https://github.com/keybase/client/releases/download/v1.0.0-27"
+  # end
 
   def install
     ENV["GOPATH"] = buildpath
