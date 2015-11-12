@@ -29,10 +29,10 @@ class Keybase < Formula
   end
 
   def post_install
-    system "#{opt_bin}/keybase", "launchd", "install", "homebrew.mxcl.keybase", "#{opt_bin}/keybase", "service"
+    system "#{opt_bin}/keybase", "launchd", "restart", "homebrew.mxcl.keybase"
   end
 
   test do
-    system "#{bin}/keybase", "version"
+    system "#{bin}/keybase", "help"
   end
 end

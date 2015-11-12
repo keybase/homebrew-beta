@@ -29,10 +29,10 @@ class Kbstage < Formula
   end
 
   def post_install
-    system "#{opt_bin}/kbstage", "launchd", "install", "homebrew.mxcl.keybase.staging", "#{opt_bin}/kbstage", "service"
+    system "#{opt_bin}/kbstage", "launchd", "restart", "homebrew.mxcl.keybase.staging"
   end
 
   test do
-    system "#{bin}/kbstage", "version"
+    system "#{bin}/kbstage", "help"
   end
 end
