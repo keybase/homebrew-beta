@@ -2,11 +2,11 @@ class Kbstage < Formula
   desc "Keybase (Staging)"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/client/archive/v1.0.0-46.tar.gz"
-  sha256 "383625f3b3d4c2c78e68defc1d90c5e611441f5da03f3eebc0c4c1ffc6d305cd"
+  url "https://github.com/keybase/client/archive/v1.0.0-47.tar.gz"
+  sha256 "a026fa0df54909989a50d607c0ac942857aa4ca7de00d5adef8ef30f403a082d"
 
   head "https://github.com/keybase/client.git"
-  version "1.0.0-46"
+  version "1.0.0-47"
 
   depends_on "go" => :build
 
@@ -29,10 +29,10 @@ class Kbstage < Formula
   end
 
   def post_install
-    system "#{opt_bin}/kbstage", "launchd", "install", "homebrew.mxcl.keybase.staging", "#{opt_bin}/kbstage", "service"
+    system "#{opt_bin}/kbstage", "launchd", "restart", "homebrew.mxcl.keybase.staging"
   end
 
   test do
-    system "#{bin}/kbstage", "version"
+    system "#{bin}/kbstage", "help"
   end
 end
