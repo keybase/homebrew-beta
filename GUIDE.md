@@ -77,21 +77,38 @@ For example, for staging:
           rm -rf ~/Library/Application\ Support/KeybaseStaging
           kbstage launchd start homebrew.mxcl.keybase.staging
 
-### Building into Brew
+### Building into Brew or Keybase.app
 
 Sometimes it's useful to build a new version of a keybase binary directly over
-the existing brew install.
+the existing brew or app install.
 
 For example, kbstage:
 
 ```
 go build -a -tags "staging brew" -o /usr/local/opt/kbstage/bin/kbstage github.com/keybase/client/go/keybase
-/usr/local/opt/kbstage/bin/kbstage launchd install homebrew.mxcl.keybase.staging /usr/local/opt/kbstage/bin/kbstage service
+/usr/local/opt/kbstage/bin/kbstage launchd restart homebrew.mxcl.keybase.staging
+```
+
+For KeybaseStage.app:
+
+```
+go build -a -tags "staging brew" -o /Applications/KeybaseStage.app/Contents/SharedSupport/bin/kbstage github.com/keybase/client/go/keybase
+/usr/local/opt/kbstage/bin/kbstage launchd restart keybase.service.staging
 ```
 
 For example, kbfsstage:
 
 ```
 go build -a -tags "staging brew" -o /usr/local/opt/kbfsstage/bin/kbfsstage github.com/keybase/kbfs/kbfsfuse
-/usr/local/opt/kbstage/bin/kbstage launchd install homebrew.mxcl.kbfs.staging  /usr/local/opt/kbfsstage/bin/kbfsstage $HOME/Keybase.stage
+/usr/local/opt/kbstage/bin/kbstage launchd restart homebrew.mxcl.kbfs.staging
+```
+
+### Uninstalling Service
+
+```
+# For kbstage
+kbstage launchd uninstall homebrew.mxcl.keybase.staging
+
+# For keybase
+kbstage launchd uninstall homebrew.mxcl.keybase
 ```
