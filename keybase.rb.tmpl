@@ -1,38 +1,32 @@
 class Keybase < Formula
-  desc "Keybase"
+  desc "Command-line interface to Keybase.io"
   homepage "https://keybase.io/"
-
   url "https://github.com/keybase/client/archive/%VERSION_TAG%.tar.gz"
   sha256 "%SRC_SHA%"
-
-  head "https://github.com/keybase/client.git"
   version "%VERSION%"
 
-  depends_on "go" => :build
+  head "https://github.com/keybase/client.git"
 
-  # bottle do
-  #   cellar :any_skip_relocation
-  #   sha256 "c04b868ba22b8ce2742d3031c9b342cdaa4e5629915e9219e1fa3cb5938c2d07" => :yosemite
-  #   root_url "https://github.com/keybase/client/releases/download/v1.0.0-27"
-  # end
+  bottle do
+    sha256 "0082c09c96cf19d1443723a5d91345547a4e6ce90d4139ec55ed017626bf0202" => :el_capitan
+    sha256 "6f30a1b8f5d04fe767f42437852a4d3445624988f152c73dbf5a00d6bc4a2010" => :yosemite
+    sha256 "3cfd77bd3ae34a93f200d9e0800b615b129bd8bd330d5d0d036743b2548bca14" => :mavericks
+  end
+
+  depends_on "go" => :build
 
   def install
     ENV["GOPATH"] = buildpath
     ENV["GOBIN"] = buildpath
     ENV["GO15VENDOREXPERIMENT"] = "1"
-    system "mkdir", "-p", "src/github.com/keybase/client/"
-    system "mv", "go", "src/github.com/keybase/client/"
+    (buildpath/"src/github.com/keybase/client/").install "go"
 
     system "go", "build", "-a", "-tags", "production brew", "github.com/keybase/client/go/keybase"
 
     bin.install "keybase"
   end
 
-  def post_install
-    system "#{opt_bin}/keybase", "launchd", "restart", "homebrew.mxcl.keybase"
-  end
-
   test do
-    system "#{bin}/keybase", "help"
+    system "#{bin}/keybase", "-standalone", "id", "homebrew"
   end
 end
