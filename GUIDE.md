@@ -85,22 +85,19 @@ the existing brew or app install.
 For example, kbstage:
 
 ```
-go build -a -tags "staging brew" -o /usr/local/opt/kbstage/bin/kbstage github.com/keybase/client/go/keybase
-/usr/local/opt/kbstage/bin/kbstage launchd restart homebrew.mxcl.keybase.staging
+GO15VENDOREXPERIMENT=1 go build -a -tags "staging brew" -o /usr/local/opt/kbstage/bin/kbstage github.com/keybase/client/go/keybase
 ```
 
 For KeybaseStage.app:
 
 ```
-go build -a -tags "staging brew" -o /Applications/KeybaseStage.app/Contents/SharedSupport/bin/kbstage github.com/keybase/client/go/keybase
-/usr/local/opt/kbstage/bin/kbstage launchd restart keybase.service.staging
+GO15VENDOREXPERIMENT=1 go build -a -tags "staging" -o /Applications/KeybaseStage.app/Contents/SharedSupport/bin/kbstage github.com/keybase/client/go/keybase
 ```
 
 For example, kbfsstage:
 
 ```
-go build -a -tags "staging brew" -o /usr/local/opt/kbfsstage/bin/kbfsstage github.com/keybase/kbfs/kbfsfuse
-/usr/local/opt/kbstage/bin/kbstage launchd restart homebrew.mxcl.kbfs.staging
+GO15VENDOREXPERIMENT=0 go build -a -tags "staging brew" -o /usr/local/opt/kbfsstage/bin/kbfsstage github.com/keybase/kbfs/kbfsfuse
 ```
 
 ### Uninstalling Service
@@ -108,7 +105,9 @@ go build -a -tags "staging brew" -o /usr/local/opt/kbfsstage/bin/kbfsstage githu
 ```
 # For kbstage
 kbstage launchd uninstall homebrew.mxcl.keybase.staging
+kbstage launchd uninstall keybase.service.staging
 
 # For keybase
 kbstage launchd uninstall homebrew.mxcl.keybase
+kbstage launchd uninstall keybase.service
 ```
