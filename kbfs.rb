@@ -2,7 +2,7 @@ class Kbfs < Formula
   desc "Keybase FS"
   homepage "https://keybase.io/"
 
-  url "https://github.com/keybase/kbfs-beta/archive/1.0.0-24.tar.gz"
+  url "https://github.com/keybase/kbfs-beta/archive/v1.0.0-24.tar.gz"
   sha256 "44ab9e0621cb22155020d8d51856420bc08ba0a81d68db14b523d71b9898f945"
 
   head "https://github.com/keybase/kbfs-beta.git"
