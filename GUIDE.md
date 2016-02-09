@@ -59,6 +59,9 @@ keybase version # Should say 1.0.9 for both client and server
 # Install from HEAD
 brew uninstall --force keybase
 brew install --HEAD keybase
+
+keybase version # Should show a version mismatch
+keybase id # Should trigger a service restart and then continue
 ```
 
 ### Environments
