@@ -57,7 +57,7 @@ brew install keybase.rb
 brew link --overwrite keybase
 
 # Make sure service is running for 1.0.9
-keybase ctl restart
+keybase install
 keybase version # Should say 1.0.9 for both client and server
 
 # Install from HEAD
