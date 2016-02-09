@@ -54,6 +54,7 @@ keybase uninstall
 brew uninstall --force keybase
 cd 109 # Formula for 1.0.9 is in there
 brew install keybase.rb
+brew link --overwrite keybase
 
 # Make sure service is running for 1.0.9
 keybase ctl restart
