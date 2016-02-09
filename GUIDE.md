@@ -47,7 +47,10 @@ Then try testing the bottle by uninstalling and re-installing.
 ### Testing Upgrades
 
 ```sh
-# Install older version
+# Uninstall existing keybase
+keybase uninstall
+
+# Install older version from brew (e.g. 1.0.9)
 brew uninstall --force keybase
 cd 109 # Formula for 1.0.9 is in there
 brew install keybase.rb
