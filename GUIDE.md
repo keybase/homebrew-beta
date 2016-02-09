@@ -44,6 +44,21 @@ Update the release title (you can use the version `v1.2.3-400`) and description 
 
 Then try testing the bottle by uninstalling and re-installing.
 
+### Testing Upgrades
+
+# Install older version
+brew uninstall --force keybase
+cd 109 # Formula for 1.0.9 is in there
+brew install keybase.rb
+
+# Make sure service is running for 1.0.9
+keybase ctl restart
+keybase version # Should say 1.0.9 for both client and server
+
+# Install from HEAD
+brew uninstall --force keybase
+brew install --HEAD keybase
+
 ### Environments
 
  Env     | Command                             | Executable
