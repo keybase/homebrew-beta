@@ -46,6 +46,7 @@ Then try testing the bottle by uninstalling and re-installing.
 
 ### Testing Upgrades
 
+```sh
 # Install older version
 brew uninstall --force keybase
 cd 109 # Formula for 1.0.9 is in there
@@ -58,6 +59,7 @@ keybase version # Should say 1.0.9 for both client and server
 # Install from HEAD
 brew uninstall --force keybase
 brew install --HEAD keybase
+```
 
 ### Environments
 
