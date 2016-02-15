@@ -52,7 +52,7 @@ keybase uninstall
 
 # Install older version from brew (e.g. 1.0.9)
 brew uninstall --force keybase
-cd 109 # Formula for 1.0.9 is in there
+cd 10009 # Formula for 1.0.9 is in there
 brew install keybase.rb
 brew link --overwrite keybase
 
