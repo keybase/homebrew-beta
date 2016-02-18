@@ -52,7 +52,7 @@ keybase uninstall
 
 # Install older version from brew (e.g. 1.0.9)
 brew uninstall --force keybase
-cd 10009 # Formula for 1.0.9 is in there
+cd 10009
 brew install keybase.rb
 brew link --overwrite keybase
 
@@ -60,9 +60,11 @@ brew link --overwrite keybase
 keybase install
 keybase version # Should say 1.0.9 for both client and server
 
-# Install from HEAD
+# Install new version
 brew uninstall --force keybase
-brew install --HEAD keybase
+cd 10013
+brew install keybase.rb
+brew link --overwrite keybase
 
 keybase version # Should show a version mismatch
 keybase id # Should trigger a service restart and then continue
