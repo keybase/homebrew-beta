@@ -1,8 +1,6 @@
 ### Want to Help Test?
 
-This repository is the homebrew tap for beta, staging and development builds.
-
-See the [Install Instructions](https://keybase.io/docs/cli_kbstage) for more details.
+This repository is the homebrew tap for beta.
 
 ### Source Code & More
 

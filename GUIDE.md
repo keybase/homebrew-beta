@@ -21,12 +21,12 @@ This example assumes the version is `1.2.3-400`.
 
 To test the formula:
 
-    cp kbstage.rb /usr/local/Library/Taps/keybase/homebrew-beta
-    brew install kbstage
+    cp keybase.rb /usr/local/Library/Taps/keybase/homebrew-beta
+    brew install keybase
 
 Be sure to revert any changes in `/usr/local/Library/Taps/keybase/homebrew-beta`:
 
-    git checkout kbstage.rb
+    git checkout keybase.rb
 
 ### Bottling
 
@@ -70,69 +70,30 @@ keybase version # Should show a version mismatch
 keybase id # Should trigger a service restart and then continue
 ```
 
-### Environments
-
- Env     | Command                             | Executable
- ------- | ----------------------------------- | ----------
- Prod    | `brew install keybase/beta/keybase` | `keybase`  
- Staging | `brew install keybase/beta/kbstage` | `kbstage`  
- Devel   | `brew install keybase/beta/kbdev`   | `kbdev`    
-
-**Note**: Production (release) build is currently disabled until we deem it safe to run against prod.
-
-To (force) install Keybase from source (this is the default if there is no bottle), use `--build-from-source`. For example:
-
-          brew install --build-from-source keybase/beta/kbstage
-
-
-Because Keybase has multiple environments (run modes) for development and testing there are different app directories and service launchd labels.
-
- Env     | App Directory                                   | Service (launchd) Label
- ------- | ----------------------------------------------- | ----------
- Prod    | `~/Library/Application\ Support/Keybase`        | `homebrew.mxcl.keybase`  
- Staging | `~/Library/Application\ Support/KeybaseStaging` | `homebrew.mxcl.keybase.staging`  
- Devel   | `~/Library/Application\ Support/KeybaseDevel`   | `homebrew.mxcl.keybase.devel`
-
 #### Clearing Local State
 
 In the rare case you need to clear your local state, you should stop the service first before removing the application directory.
 
-For example, for staging:
+For example:
 
-          kbstage launchd stop homebrew.mxcl.keybase.staging
-          rm -rf ~/Library/Application\ Support/KeybaseStaging
-          kbstage launchd start homebrew.mxcl.keybase.staging
+          keybase launchd stop homebrew.mxcl.keybase
+          rm -rf ~/Library/Application\ Support/Keybase
+          keybase launchd start homebrew.mxcl.keybase
 
 ### Building into Brew or Keybase.app
 
 Sometimes it's useful to build a new version of a keybase binary directly over
 the existing brew or app install.
 
-For example, kbstage:
+For example, keybase:
 
 ```
-GO15VENDOREXPERIMENT=1 go build -a -tags "staging brew" -o /usr/local/opt/kbstage/bin/kbstage github.com/keybase/client/go/keybase
-```
-
-For KeybaseStage.app:
-
-```
-GO15VENDOREXPERIMENT=1 go build -a -tags "staging" -o /Applications/KeybaseStage.app/Contents/SharedSupport/bin/kbstage github.com/keybase/client/go/keybase
-```
-
-For example, kbfsstage:
-
-```
-GO15VENDOREXPERIMENT=0 go build -a -tags "staging brew" -o /usr/local/opt/kbfsstage/bin/kbfsstage github.com/keybase/kbfs/kbfsfuse
+GO15VENDOREXPERIMENT=1 go build -a -tags "production brew" -o /usr/local/opt/kbstage/bin/kbstage github.com/keybase/client/go/keybase
 ```
 
 ### Uninstalling Service
 
 ```
-# For kbstage
-kbstage launchd uninstall homebrew.mxcl.keybase.staging
-kbstage launchd uninstall keybase.service.staging
-
 # For keybase
 kbstage launchd uninstall homebrew.mxcl.keybase
 kbstage launchd uninstall keybase.service
